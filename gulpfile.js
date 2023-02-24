@@ -9,17 +9,17 @@ const browserSync = require("browser-sync").create();
 const svgSprite = require('gulp-svg-sprite');
 
 function svgSprites() {
-    return src('app/images/icon/*.svg') // выбираем в папке с иконками все файлы с расширением svg
+    return src('app/images/icon/*.svg')
       .pipe(
         svgSprite({
           mode: {
             stack: {
-              sprite: '../sprite.svg', // указываем имя файла спрайта и путь
+              sprite: '../sprite.svg',
             },
           },
         })
       )
-      .pipe(dest('app/images')); // указываем, в какую папку поместить готовый файл спрайта
+      .pipe(dest('app/images'));
     }
 
 function brawsersynk() {
@@ -89,8 +89,6 @@ function watching() {
     watch(["app/**/*.html"]).on("change", browserSync.reload);
     watch(['app/images/icons/*.svg'], svgSprites);
 }
-
-
 
 exports.styles = styles;
 exports.scripts = scripts;
