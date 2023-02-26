@@ -4,12 +4,22 @@ const concat = require("gulp-concat");
 const autoprefixer = require("gulp-autoprefixer");
 const uglify = require("gulp-uglify");
 const imagemin = require("gulp-imagemin");
-const del = require("del");
 const browserSync = require("browser-sync").create();
+const del = require("del");
 const svgSprite = require('gulp-svg-sprite');
+const ttf2woff2 = require('gulp-ttf2woff2');
+
+function brawsersynk() {
+    browserSync.init({
+        server: {
+            baseDir: "app/"
+        },
+        notify:false
+    })
+}
 
 function svgSprites() {
-    return src('app/images/icon/*.svg')
+    return src('app/images/sprite-icons/*.svg')
       .pipe(
         svgSprite({
           mode: {
@@ -22,13 +32,10 @@ function svgSprites() {
       .pipe(dest('app/images'));
     }
 
-function brawsersynk() {
-    browserSync.init({
-        server: {
-            baseDir: "app/"
-        },
-        notify:false
-    })
+function convertFonts() {
+    return src('app/fonts/*.ttf')
+    .pipe(ttf2woff2())
+    .pipe(dest('app/fonts'));
 }
 
 function styles () {
@@ -86,8 +93,8 @@ function cleanDist() {
 function watching() {
     watch(["app/scss/**/*.scss"], styles);
     watch(["app/js/**/*.js", "!app/js/main.min.js"], scripts);
+    watch(['app/images/sprite-icons/*.svg'], svgSprites);
     watch(["app/**/*.html"]).on("change", browserSync.reload);
-    watch(['app/images/icons/*.svg'], svgSprites);
 }
 
 exports.styles = styles;
@@ -97,10 +104,11 @@ exports.watching = watching;
 exports.images = images;
 exports.cleanDist = cleanDist;
 exports.svgSprites = svgSprites;
+exports.convertFonts = convertFonts;
 
 exports.build = series(cleanDist, images, build);
 
-exports.default = parallel(svgSprites, styles, scripts, brawsersynk, watching);
+exports.default = parallel(styles, svgSprites, brawsersynk, watching);
 
 
 
