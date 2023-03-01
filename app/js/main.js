@@ -45,4 +45,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  // $(function(){
+  //   $(".testimonials-slider").slick({
+  //     dots: true,
+  //   })
+  // });
+
 });
+
+
+
+

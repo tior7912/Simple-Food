@@ -1,0 +1,54 @@
+
+.app {
+  
+  &-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-info {
+    max-width: 538px;
+  }
+
+  &-title {
+    text-align: left;
+    margin-bottom: 45px;
+  }
+
+  p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 0 0 30px 0;
+  }
+
+  &-link__list {
+    display: flex;
+    gap: 30px;
+    
+    
+    .app-btn {
+      line-height: 1.1;
+      text-align: left;
+      align-items: center;
+      gap: 6px;
+      padding: 2px 8px;
+      border-radius: 7px;
+      color: $c-white;
+      background-color:$c-dark;
+
+      &__text {
+        margin: 0;
+        font-size: 8px;
+      }
+      
+      &__span {
+        display: block;
+        margin: 0;
+        font-size: 12px;
+        font-weight: 500;
+      }
+    }
+  }
+}
+

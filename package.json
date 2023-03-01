@@ -23,6 +23,8 @@
     "sass": "^1.58.3"
   },
   "dependencies": {
-    "jquery": "^3.6.3"
+    "jquery": "^3.6.3",
+    "slick-carousel": "^1.8.1",
+    "slick-slider": "^1.8.2"
   }
 }

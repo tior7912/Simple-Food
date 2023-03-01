@@ -36,7 +36,8 @@ body {
     background-color: $c-darkBlue-900;
     mask-image: url('../images/sprite.svg#icon-time');
     mask-repeat: no-repeat;
-    mask-size: contain;mask-position: center;
+    mask-size: contain;
+    mask-position: center;
     transition: background-color 0.3s ease-in-out;
   }
 
@@ -106,11 +107,65 @@ body {
     }
   }
 
+  &--time {
+    &::before {
+      mask-image: url('../images/sprite.svg#icon-time');
+      min-width: 34px;
+      height: 34px;
+      background-color: $c-orange-900;
+    }
+  }
+
+  &--delivery {
+    &::before {
+      mask-image: url('../images/sprite.svg#icon-delivery');
+      min-width: 34px;
+      height: 34px;
+      background-color: #00aaff;
+    }
+  }
+
+  &--resturent {
+    &::before {
+      mask-image: url('../images/sprite.svg#icon-restorant');
+      min-width: 34px;
+      height: 34px;
+      background-color: #ff2222;
+    }
+  }
+
+  &--apple {
+    &::before {
+      mask-image: url('../images/icon/apple.svg');
+      background-color: $c-white;
+    }
+  }
+
+  &--google {
+    &::before {
+      mask-image: url('../images/icon/google.svg');
+      background-color: $c-white;
+    }
+  }
+
+  &--right {
+
+    &::before {
+      mask-image: url('../images/sprite.svg#icon-arrow-right');
+      width: 14px;
+      height: 12px;
+      background-color: $c-white;
+    }
+    
+  }
+
   &:hover {
     &::before {
       background-color: $c-white;
     }
   }
+
+  
 
   &:active {
     &::before {
