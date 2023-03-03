@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Food сервіс доставки готових страв | Головна сторінка</title>
     <link type="image/x-icon" href="images/icon/favicon.svg" rel="shortcut icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
@@ -257,216 +259,257 @@
                 </div>
             </section>
 
-            <section class="features mb-120" style="background-image: url('images/food_delivery.png');">
+            <section class="features mb-120">
                 <div class="container">
-                    <div class="popular-content">
-                        <h2 class="title features__title">
-                            Залишайтеся вдома, а ми потурбуємося про їжу
-                        </h2>
-                        <p>
-                            У нас є смачна їжа і ми готові доставити її до вас додому! Скористайтеся нашою доставкою прямо зараз та отримайте знижку!
-                        </p>
-                        <ul class="popular-content__list">
-                            <li class="popular-content__item icon icon--time">
-                                <p>Швидка доставка за 15 хвилин</p>
-                            </li>
-                            <li class="popular-content__item icon icon--delivery">
-                                <p>Чемні кур’єри</p>
-                            </li>
-                            <li class="popular-content__item icon icon--resturent">
-                                <p>Більше 500 закладів</p>
-                            </li>
-                        </ul>
-                        <button class="btn" type="button">Детальніше</button>
-                    </div>
+                    <h2 class="sr-only">Переваги сервісу доставки Simple Food</h2>
+                    <div class="features__inner" style="background-image: url(images/food_delivery.png);">
+                        <div class="features__content">
+                            <div class="title features__title">Залишайтеся вдома, а ми потурбуємося про їжу</div>
+                            <div class="features__description">
+                                <p>У нас є смачна їжа і ми готові доставити її до вас додому! Скористайтеся нашою доставкою прямо зараз та отримайте знижку!</p>
+                                <ul class="features__list">
+                                    <li class="features__item icon icon--delivery">Швидка доставка за 15 хвилин</li>
+                                    <li class="features__item icon icon--courier">Чемні кур’єри</li>
+                                    <li class="features__item icon icon--build">Більше 500 закладів</li>
+                                </ul>
+                                <a class="btn" href="#">Детальніше</a>
+                            </div>
+                        </div> 
+                    </div>    
                 </div>
             </section>
 
-            <section class="restorant mb-120">
+            <section class="resto mb-120">
                 <div class="container">
                     <h2 class="title">Найкращі ресторани</h2>
-                    <ul class="restorant-list">
-                        <li class="restorant-item">
-                            <article class="restorant-card">
-                                <a class="restorant-card__img" href="#">
-                                    <img class="restorant-card__img" width="370" height="300" src="images/resto_1.jpg" alt="Blaze Pizza">
-                                </a>
-                                <div class="restorant-card__bottom">
-                                    <h3 class="restorant-card__title">
-                                        Blaze Pizza
-                                    </h3>
-                                    <div class="restorant-card__info">
-                                        <p class="restorant-card__time icon icon--time">
-                                            11:00 - 22:00
-                                        </p>
-                                        <a class="restorant-card__link icon icon--right" href="#"></a>
+
+                    <ul class="resto__list cols">
+                        <li class="resto__item">
+                            <article class="content-card">
+                                <figure class="content-card__head">
+                                    <img class="content-card__img" width="370" height="300" src="images/resto_1.jpg" alt="Фото ресторану">
+                                </figure>
+                                    <div class="content-card__content">
+                                        <h3 class="content-card__title">Blaze Pizza</h3>
+                                        <div class="content-card__actions">
+                                            <div class="content-card__time icon icon--time">
+                                                <span class="sr-only">Заклад відкрито в такий час:</span>
+                                                <time datetime="11:00">11:00</time>-<time datetime="22:00">22:00</time>
+                                            </div>
+                                            <a class="btn content-card__btn icon icon--arrow" href="#">
+                                                <span class="sr-only">Перейти на сторінку ресторану</span>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
                             </article>
                         </li>
-                        <li class="restorant-item">
-                            <article class="restorant-card">
-                                <a class="restorant-card__img" href="#">
-                                    <img class="restorant-card__img" width="370" height="300" src="images/resto_2.jpg" alt="Pizza Runcho">
-                                </a>
-                                <div class="restorant-card__bottom">
-                                    <h3 class="restorant-card__title">
-                                        Pizza Runcho
-                                    </h3>
-                                    <div class="restorant-card__info">
-                                        <p class="restorant-card__time icon icon--time">
-                                            12:00 - 21:00
-                                        </p>
-                                        <a class="restorant-card__link icon icon--right" href="#"></a>
+                        <li class="resto__item">
+                            <article class="content-card">
+                                <figure class="content-card__head">
+                                    <img class="content-card__img" width="370" height="300" src="images/resto_2.jpg" alt="Фото ресторану">
+                                </figure>
+                                    <div class="content-card__content">
+                                        <h3 class="content-card__title">Pizza Runcho</h3>
+                                        <div class="content-card__actions">
+                                            <div class="content-card__time icon icon--time">
+                                                <span class="sr-only">Заклад відкрито в такий час:</span>
+                                                <time datetime="12:00">12:00</time>-<time datetime="21:00">21:00</time>
+                                            </div>
+                                            <a class="btn content-card__btn icon icon--arrow" href="#">
+                                                <span class="sr-only">Перейти на сторінку ресторану</span>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
                             </article>
                         </li>
-                        <li class="restorant-item">
-                            <article class="restorant-card">
-                                <a class="restorant-card__img" href="#">
-                                    <img class="restorant-card__img" width="370" height="300" src="images/resto_3.jpg" alt="Pizza Hut">
-                                </a>
-                                <div class="restorant-card__bottom">
-                                    <h3 class="restorant-card__title">
-                                        Pizza Hut
-                                    </h3>
-                                    <div class="restorant-card__info">
-                                        <p class="restorant-card__time icon icon--time">
-                                            11:00 - 22:00
-                                        </p>
-                                        <a class="restorant-card__link icon icon--right" href="#"></a>
+                        <li class="resto__item">
+                            <article class="content-card">
+                                <figure class="content-card__head">
+                                    <img class="content-card__img" width="370" height="300" src="images/resto_3.jpg" alt="Фото ресторану">
+                                </figure>
+                                    <div class="content-card__content">
+                                        <h3 class="content-card__title">Pizza Hut</h3>
+                                        <div class="content-card__actions">
+                                            <div class="content-card__time icon icon--time">
+                                                <span class="sr-only">Заклад відкрито в такий час:</span>
+                                                <time datetime="11:00">11:00</time>-<time datetime="22:00">22:00</time>
+                                            </div>
+                                            <a class="btn content-card__btn icon icon--arrow" href="#">
+                                                <span class="sr-only">Перейти на сторінку ресторану</span>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
                             </article>
                         </li>
-                        <li class="restorant-item">
-                            <article class="restorant-card">
-                                <a class="restorant-card__img" href="#">
-                                    <img class="restorant-card__img" width="370" height="300" src="images/resto_4.jpg" alt="McDonald`s">
-                                </a>
-                                <div class="restorant-card__bottom">
-                                    <h3 class="restorant-card__title">
-                                        McDonald`s
-                                    </h3>
-                                    <div class="restorant-card__info">
-                                        <p class="restorant-card__time icon icon--time">
-                                            06:00 - 23:00
-                                        </p>
-                                        <a class="restorant-card__link icon icon--right" href="#"></a>
+                        <li class="resto__item">
+                            <article class="content-card">
+                                <figure class="content-card__head">
+                                    <img class="content-card__img" width="370" height="300" src="images/resto_4.jpg" alt="Фото ресторану">
+                                </figure>
+                                    <div class="content-card__content">
+                                        <h3 class="content-card__title">McDonald`s</h3>
+                                        <div class="content-card__actions">
+                                            <div class="content-card__time icon icon--time">
+                                                <span class="sr-only">Заклад відкрито в такий час:</span>
+                                                <time datetime="6:00">6:00</time>-<time datetime="23:00">23:00</time>
+                                            </div>
+                                            <a class="btn content-card__btn icon icon--arrow" href="#">
+                                                <span class="sr-only">Перейти на сторінку ресторану</span>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
                             </article>
                         </li>
-                        <li class="restorant-item">
-                            <article class="restorant-card">
-                                <a class="restorant-card__img" href="#">
-                                    <img class="restorant-card__img" width="370" height="300" src="images/resto_5.jpg" alt="KFC">
-                                </a>
-                                <div class="restorant-card__bottom">
-                                    <h3 class="restorant-card__title">
-                                        KFC
-                                    </h3>
-                                    <div class="restorant-card__info">
-                                        <p class="restorant-card__time icon icon--time">
-                                            06:00 - 23:30
-                                        </p>
-                                        <a class="restorant-card__link icon icon--right" href="#"></a>
+                        <li class="resto__item">
+                            <article class="content-card">
+                                <figure class="content-card__head">
+                                    <img class="content-card__img" width="370" height="300" src="images/resto_5.jpg" alt="Фото ресторану">
+                                </figure>
+                                    <div class="content-card__content">
+                                        <h3 class="content-card__title">KFC</h3>
+                                        <div class="content-card__actions">
+                                            <div class="content-card__time icon icon--time">
+                                                <span class="sr-only">Заклад відкрито в такий час:</span>
+                                                <time datetime="6:00">6:00</time>-<time datetime="23:30">23:30</time>
+                                            </div>
+                                            <a class="btn content-card__btn icon icon--arrow" href="#">
+                                                <span class="sr-only">Перейти на сторінку ресторану</span>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
                             </article>
                         </li>
-                        <li class="restorant-item">
-                            <article class="restorant-card">
-                                <a class="restorant-card__img" href="#">
-                                    <img class="restorant-card__img" width="370" height="300" src="images/resto_6.jpg" alt="Star Burgers">
-                                </a>
-                                <div class="restorant-card__bottom">
-                                    <h3 class="restorant-card__title">
-                                        Star Burgers
-                                    </h3>
-                                    <div class="restorant-card__info">
-                                        <p class="restorant-card__time icon icon--time">
-                                            09:00 - 21:00
-                                        </p>
-                                        <a class="restorant-card__link icon icon--right" href="#"></a>
+                        <li class="resto__item">
+                            <article class="content-card">
+                                <figure class="content-card__head">
+                                    <img class="content-card__img" width="370" height="300" src="images/resto_6.jpg" alt="Фото ресторану">
+                                </figure>
+                                    <div class="content-card__content">
+                                        <h3 class="content-card__title">Star Burgers</h3>
+                                        <div class="content-card__actions">
+                                            <div class="content-card__time icon icon--time">
+                                                <span class="sr-only">Заклад відкрито в такий час:</span>
+                                                <time datetime="9:00">9:00</time>-<time datetime="21:00">21:00</time>
+                                            </div>
+                                            <a class="btn content-card__btn icon icon--arrow" href="#">
+                                                <span class="sr-only">Перейти на сторінку ресторану</span>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
                             </article>
                         </li>
                     </ul>
                 </div>
             </section>
 
-            <section class="testimonials mb-120">
+            <section class="reviews mb-120">
                 <div class="container">
                     <h2 class="title">Відгуки клієнтів</h2>
-                    <div class="testimonials-slider" >
-                        <div class="testimonials-content">
-                            <img class="testimonials-left" src="images/daryna.jpg" width="300" height="300" style="border-radius: 50%;" alt="Дарина">
-                            <div class="testimonials-right">
-                                <blockquote class="testimonials-right__review">
-                                    SimpleFood - одна з найкращих служб доставки продуктів з ресторанів у місті. Дуже зручний сайт та застосунок. Їхні доставники дуже ввічливі та пунктуальні. Компанія часто проводить акції та дарує знижки на доставку - однозначно рекомендую!
-                                </blockquote>
-                                <p class="testimonials-right__name">Дарина</p>
-                                <p class="testimonials-right__decription">Поціновувачка смачної їжі</p>
-                            </div>
-                        </div>
 
-                        <div class="testimonials-content">
-                            <img class="testimonials-left" src="images/daryna.jpg" width="300" height="300" style="border-radius: 50%;" alt="Дарина">
-                            <div class="testimonials-right">
-                                <blockquote class="testimonials-right__review">
-                                    SimpleFood - одна з найкращих служб доставки продуктів з ресторанів у місті. Дуже зручний сайт та застосунок. Їхні доставники дуже ввічливі та пунктуальні. Компанія часто проводить акції та дарує знижки на доставку - однозначно рекомендую!
-                                </blockquote>
-                                <p class="testimonials-right__name">Дарина</p>
-                                <p class="testimonials-right__decription">Поціновувачка смачної їжі</p>
-                            </div>
-                        </div>
-
-                        <div class="testimonials-content">
-                            <img class="testimonials-left" src="images/daryna.jpg" width="300" height="300" style="border-radius: 50%;" alt="Дарина">
-                            <div class="testimonials-right">
-                                <blockquote class="testimonials-right__review">
-                                    SimpleFood - одна з найкращих служб доставки продуктів з ресторанів у місті. Дуже зручний сайт та застосунок. Їхні доставники дуже ввічливі та пунктуальні. Компанія часто проводить акції та дарує знижки на доставку - однозначно рекомендую!
-                                </blockquote>
-                                <p class="testimonials-right__name">Дарина</p>
-                                <p class="testimonials-right__decription">Поціновувачка смачної їжі</p>
-                            </div>
+                    <div class="reviews__slider swiper">
+                        <ul class="reviews__list swiper-wrapper">
+                            <li class="reviews__item swiper-slide">
+                                <figure class="reviews-card">
+                                    <img class="reviews-card__img" src="images/daryna.jpg" alt="фото Дарини">
+                                    <div class="reviews__content">
+                                        <blockquote class="reviews-card__text">
+                                            <p>
+                                                SimpleFood - одна з найкращих служб доставки продуктів з ресторанів у місті. Дуже зручний сайт та застосунок. Їхні доставники дуже ввічливі та пунктуальні. Компанія часто проводить акції та дарує знижки на доставку - однозначно рекомендую!
+                                            </p>
+                                        </blockquote>
+                                        <figcaption class="rewiews-card__info">
+                                            <div class="reviews-card__name">Дарина</div>
+                                            <span class="reviews-card__detail">Поціновувачка смачної їжі</span>
+                                        </figcaption>
+                                    </div>
+                                </figure>
+                            </li>
+                            <li class="reviews__item swiper-slide">
+                                <figure class="reviews-card">
+                                    <img class="reviews-card__img" src="images/daryna.jpg" alt="фото Дарини">
+                                    <div class="reviews__content">
+                                        <blockquote class="reviews-card__text">
+                                            <p>
+                                                SimpleFood - одна з найкращих служб доставки продуктів з ресторанів у місті. Дуже зручний сайт та застосунок. Їхні доставники дуже ввічливі та пунктуальні. Компанія часто проводить акції та дарує знижки на доставку - однозначно рекомендую!
+                                            </p>
+                                        </blockquote>
+                                        <figcaption class="rewiews-card__info">
+                                            <div class="reviews-card__name">Дарина</div>
+                                            <span class="reviews-card__detail">Поціновувачка смачної їжі</span>
+                                        </figcaption>
+                                    </div>
+                                </figure>
+                            </li>
+                            <li class="reviews__item swiper-slide">
+                                <figure class="reviews-card">
+                                    <img class="reviews-card__img" src="images/daryna.jpg" alt="фото Дарини">
+                                    <div class="reviews__content">
+                                        <blockquote class="reviews-card__text">
+                                            <p>
+                                                SimpleFood - одна з найкращих служб доставки продуктів з ресторанів у місті. Дуже зручний сайт та застосунок. Їхні доставники дуже ввічливі та пунктуальні. Компанія часто проводить акції та дарує знижки на доставку - однозначно рекомендую!
+                                            </p>
+                                        </blockquote>
+                                        <figcaption class="rewiews-card__info">
+                                            <div class="reviews-card__name">Дарина</div>
+                                            <span class="reviews-card__detail">Поціновувачка смачної їжі</span>
+                                        </figcaption>
+                                    </div>
+                                </figure>
+                            </li>
+                            <li class="reviews__item swiper-slide">
+                                <figure class="reviews-card">
+                                    <img class="reviews-card__img" src="images/daryna.jpg" alt="фото Дарини">
+                                    <div class="reviews__content">
+                                        <blockquote class="reviews-card__text">
+                                            <p>
+                                                SimpleFood - одна з найкращих служб доставки продуктів з ресторанів у місті. Дуже зручний сайт та застосунок. Їхні доставники дуже ввічливі та пунктуальні. Компанія часто проводить акції та дарує знижки на доставку - однозначно рекомендую!
+                                            </p>
+                                        </blockquote>
+                                        <figcaption class="rewiews-card__info">
+                                            <div class="reviews-card__name">Дарина</div>
+                                            <span class="reviews-card__detail">Поціновувачка смачної їжі</span>
+                                        </figcaption>
+                                    </div>
+                                </figure>
+                            </li>
+                        </ul>
+                        <div class="reviews__actions">
+                            <button class="reviews__btn reviews__btn--prev" type="button"></button>
+                            <div class="reviews__dots"></div>
+                            <button class="reviews__btn reviews__btn--next" type="button"></button>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section class="app mb-120">
+            <section class="application mb-120" style="background-image: url(images/get_app.jpg);">
+                <h2 class="sr-only">Застосунки Simple Food для швидкого та зручного замовлення їжі</h2>
                 <div class="container">
-                    <div class="app-content">
-                        <div class="app-info">
-                            <h2 class="title app-title">
-                                Завантажте мобільний застосунок
-                            </h2>
-                            <p class="app-descr">
-                                Ресторани, які ви любите - у ваших руках. Встановлюйте застосунок та замовляйте їжу в зручному місці в зручний час
-                            </p>
-                            <div class="app-link__list">
-                                <a class="app-btn icon icon--apple" href="#">
-                                    <p class="app-btn__text">
-                                        Download on the <span class="app-btn__span">App Store</span>
-                                    </p>
-                                </a>
-                                <a class="app-btn icon icon--google" href="#">
-                                    <p class="app-btn__text">
-                                        Get in on<span class="app-btn__span">Google Play</span>
-                                    </p>
-                                </a>
-                            </div>
+                    <div class="application__content">
+                        <div class="title application__title">
+                            Завантажте мобільний застосунок
                         </div>
-                        <img class="app-img" src="images/get_app.jpg" width="570" height="380" alt="Додаток Simple Food">
+                        <div class="application__info">
+                            <p>Ресторани, які ви любите - у ваших руках.</p>
+                            <p>Встановлюйте застосунок та замовляйте їжу в зручному місці в зручний час</p>
+                        </div>
+                        <ul class="application__list">
+                            <li class="application__item">
+                                <a class="app-icon app-icon--apple" href="#" target="_blank">
+                                    <span class="sr-only">Завантажити застосунок з App Store</span>
+                                </a>
+                            </li>
+                            <li class="application__item">
+                                <a class="app-icon app-icon--google" href="#" target="_blank">
+                                    <span class="sr-only">Завантажити застосунок з Google Play</span>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
+
                 </div>
             </section>
         </main>
-        
 
         <footer class="footer">
             <div class="container">
@@ -570,11 +613,7 @@
         </footer>
     </div>
     
-    
-    <!-- <script src="./js/mixitup.min.js"></script> -->
-    
-    <script src="js/slider.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

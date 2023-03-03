@@ -1,6 +1,7 @@
 
 body {
   font-family: 'Rubik', sans-serif;
+  font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.3;
@@ -107,56 +108,34 @@ body {
     }
   }
 
+  &--delivery {
+    &::before {
+      mask-image: url('../images/sprite.svg#icon-timer');
+    }
+  }
+
+  &--courier {
+    &::before {
+      mask-image: url('../images/sprite.svg#icon-delivery');
+    }
+  }
+
+  &--build {
+    &::before {
+      mask-image: url('../images/sprite.svg#icon-restorant');
+    }
+  }
+
+  &--arrow {
+    &::before {
+      mask-image: url('../images/sprite.svg#icon-arrow-right');
+    }
+  }
+
   &--time {
     &::before {
       mask-image: url('../images/sprite.svg#icon-time');
-      min-width: 34px;
-      height: 34px;
-      background-color: $c-orange-900;
     }
-  }
-
-  &--delivery {
-    &::before {
-      mask-image: url('../images/sprite.svg#icon-delivery');
-      min-width: 34px;
-      height: 34px;
-      background-color: #00aaff;
-    }
-  }
-
-  &--resturent {
-    &::before {
-      mask-image: url('../images/sprite.svg#icon-restorant');
-      min-width: 34px;
-      height: 34px;
-      background-color: #ff2222;
-    }
-  }
-
-  &--apple {
-    &::before {
-      mask-image: url('../images/icon/apple.svg');
-      background-color: $c-white;
-    }
-  }
-
-  &--google {
-    &::before {
-      mask-image: url('../images/icon/google.svg');
-      background-color: $c-white;
-    }
-  }
-
-  &--right {
-
-    &::before {
-      mask-image: url('../images/sprite.svg#icon-arrow-right');
-      width: 14px;
-      height: 12px;
-      background-color: $c-white;
-    }
-    
   }
 
   &:hover {
@@ -341,4 +320,12 @@ body {
 .show {
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 34px 30px;
+
+
 }

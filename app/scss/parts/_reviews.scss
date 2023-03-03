@@ -1,0 +1,127 @@
+
+.reviews {
+  
+  &__list {
+    margin-bottom: 30px;
+  }
+
+  &__actions {
+    width: fit-content;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 23px;
+    margin-bottom: 2px;
+  }
+
+  &__btn {
+    min-width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: 2px solid transparent;
+    border: 3px solid $c-orange-900;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, outline-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+
+    &::before {
+      content: '';
+      min-width: 19px;
+      height: 19px;
+      display: inline-block;
+      mask-image: url('../../images/sprite.svg#icon-right');
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      mask-position: center;
+      background-color: $c-orange-900;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    &--prev {
+      &::before {
+        mask-image: url('../../images/sprite.svg#icon-left');
+      }
+    }
+
+    &[disabled] {
+      border-color: $c-gray;
+
+      &:focus,
+      &:hover,
+      &:active {
+        border-color: indianred;
+        outline-color: transparent;
+        background-color: indianred;
+      }
+
+      &::before {
+        background-color: $c-gray;
+      }
+    }
+
+    &:focus {
+      outline-color: rgba($c-orange-900, 0.5);
+    }
+
+    &:hover {
+      background-color: rgba($c-orange-900, 0.1);
+      border-color: rgba($c-orange-900, 0.5);
+      outline-color: transparent;
+
+      &::before {
+        background-color: rgba($c-orange-900, 0.5);
+      }
+    }
+
+    &:active {
+      background-color: rgba($c-orange-900, 0.1);
+      border-color: rgba($c-orange-900, 0.1);
+      outline-color: transparent;
+
+      &::before {
+        background-color: $c-orange-900;
+      }
+    }
+  }
+
+  &__dots {
+    display: flex;
+    gap: 15px;
+  }
+
+  &__dot {
+    min-width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: $c-gray;
+    cursor: pointer;
+    outline: 2px solid transparent;
+    transition: background-color 0.3s ease-in-out, outline-color 0.3s ease-in-out;
+    // display: inline-block;
+
+    &--active {
+      background-color: $c-orange-900;
+    }
+
+    &:focus {
+      outline-color: $c-orange-900;
+    }
+
+    &:hover {
+      outline-color: rgba($c-orange-900, 0.5);
+      background-color: rgba($c-orange-900, 0.1);
+    }
+
+    &:active {
+      outline-color: transparent;
+      outline-color: rgba($c-orange-900, 0.5);
+    }
+  }
+
+}
+
+
+
