@@ -5,6 +5,10 @@
   justify-content: center;
   gap: 20px;
 
+  @include r($xs) {
+
+  }
+
   &__btn {
     outline: 1px solid $c-silver-200;
     border-radius: 5px;
@@ -12,6 +16,9 @@
     padding: 13px 32px;
     color: $c-darkBlue-900;
     transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, outline-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+    @include r($md) {
+    }
 
     &::before {
       min-width: 44px;
@@ -61,4 +68,19 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 30px;
+
+  @include r($lg) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @include r($md) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include r($sm) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

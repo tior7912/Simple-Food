@@ -58,6 +58,23 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
+  const burger = document.querySelector('.burger');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const logo = document.querySelector(".logo")
+  const headerActionFirst = document.querySelector(".header__btn--1")
+  const headerActionSecond = document.querySelector(".header__btn--2")
+  const none = document.querySelector(".none")
+  const bodyLock = document.querySelector('body');
+
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('burger--active');
+    headerActionFirst.classList.toggle("none");
+    headerActionSecond.classList.toggle("none");
+    mobileMenu.classList.toggle("mobile-menu");
+    bodyLock.classList.toggle("lock")
+
+  });
+
 });
 
 

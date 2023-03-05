@@ -1,5 +1,8 @@
 
 $rightPos: calc( (100vw - 1170px) / 2 );
+$rightPosMD: calc( (100vw - 992px) / 2 );
+$rightPosSM: calc( (100vw - 768px) / 2 );
+$rightPosXS: calc( (100vw - 560px) / 2 );
 
 .hero {
   min-height: 660px;
@@ -8,6 +11,32 @@ $rightPos: calc( (100vw - 1170px) / 2 );
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right $rightPos center;
+
+  @include r($md) {
+    background-position: right $rightPosMD center;
+  }
+
+  @include r($sm) {
+    background-position: right $rightPosSM center;
+  }
+
+  @include r($xs) {
+    background-position: right $rightPosXS center;
+  }
+
+  &__content {
+
+    @include r($sm) {
+      padding: 20px 0;
+      width: 100vw;
+      // height: 700px;
+      background-color: rgba($c-white, 0.85);
+    }
+
+    @include r($xs) {
+      height: 500px;
+    }
+  }
 
   &__title {
     max-width: 480px;
@@ -19,14 +48,20 @@ $rightPos: calc( (100vw - 1170px) / 2 );
 
     span {
       display: block;
+
+      @include r($md) {
+        // color: red;
+      }
     }
+
+    
   }
 
   &__description {
     max-width: 450px;
     line-height: 1.5;
     margin-bottom: 20px;
-    font-size: 20px;
+    font-size: size(20, 16);
     @include line-clamp(4)
   }
 

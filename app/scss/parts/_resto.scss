@@ -1,10 +1,17 @@
 
-// .resto {
+.resto {
 
-// 	&__list {
-// 	}
+	&__list {
+    
+    @include r($xs) {
+			// display: flex;
+			// overflow-y: auto;
+      // margin: 0 auto;
+    }
+		
+	}
 
-// 	&__item {
-// 	}
-// }
+	// &__item {
+	// }
+}
 

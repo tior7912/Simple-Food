@@ -5,6 +5,16 @@
     display: flex;
     flex-wrap: wrap;
     gap: 70px;
+
+    @include r($md) {
+      gap: 50px;
+    }
+
+    @include r($xs) {
+      display: flex;
+      flex-direction: column;
+    }
+
   }
 
   &__logo {
@@ -16,7 +26,16 @@
     grid-template-columns: repeat(3, auto);
     grid-auto-flow: column;
     gap: 20px 90px;
-    margin-bottom: 60px;
+    margin-bottom: size(30, 60);
+
+    @include r($lg) {
+      gap: 20px;
+    }
+
+    @include r($xs) {
+      order: 3;
+    }
+  
 
     .menu__item {
       // grid-column: 3;
@@ -32,12 +51,66 @@
       &:ntn-chid(n+9):ntn-child(-n+12) {
         grid-column: 3;
       }
+
+      @include r($xs) {
+
+        grid-column: 1;
+      }
+
+    }
+  }
+
+  &__nav {
+    @include r($md) {
+      margin-right: 15px;
+      margin-left: auto;
+    }
+
+    @include r($xs) {
+      margin-left: 0;
+      margin-right: auto;
+      order: 3;
     }
   }
 
   &__contacts {
     margin-left: auto;
     margin-right: 80px;
+
+    @include r($lg) {
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+    @include r($xs) {
+      margin-left: 0;
+      margin-right: auto;
+      order: 1;
+    }
+
+    .social {
+      @include r($xs) {
+        margin: 0;
+      }
+    }
+
+    .contacts__list {
+
+      @include r($md) {
+        flex-direction: column;
+        // margin-bottom: 0;
+        gap: 0;
+      }
+      
+    }
+
+    .contacts__link {
+
+      @include r($md) {
+        // margin-bottom: 0;
+      }
+    }
+
   }
 
   &__bottom {
@@ -140,11 +213,25 @@
       outline-color: transparent;
     }
   }
+
+  &__list {
+
+    @include r($md) {
+      display: flex;
+      gap: 20px;
+    }
+  }
+
 }
 
 .social {
   display: flex;
   gap: 20px;
+
+  @include r($md) {
+    width: fit-content;
+    margin: 0 auto;
+  }
 
   &__link {
     min-width: 39px;

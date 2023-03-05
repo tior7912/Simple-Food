@@ -23,6 +23,11 @@ $leftPos: calc( (100vw - 1032px) / 2 );
     max-width: 470px;
     background-color: rgba($c-white, 0.85);
     align-self: flex-end;
+
+    @include r($md) {
+      padding: 20px;
+      height: 600px;
+    }
   }
 
   &__title {
@@ -34,6 +39,7 @@ $leftPos: calc( (100vw - 1032px) / 2 );
     font-size: 20px;
     line-height: 1.5;
     // margin-bottom: 30px;
+
     
     p {
       margin: 0 0 30px 0;

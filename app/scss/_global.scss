@@ -11,10 +11,18 @@ body {
 
 .wrapper {
   overflow-x: hidden;
+
+  // @include r($xs) {
+  //   overflow-x: hidden;
+  // }
 }
 
 .page {
   padding-top: 160px;
+
+  @include r($xs) {
+    padding-top: 19px;;
+}
 }
 
 .container {
@@ -22,6 +30,12 @@ body {
   padding: 0 15px;
   width: 100%;
   margin: 0 auto;
+
+  @include r($xs) {
+    max-width: 600px;
+    // margin: 0 auto;
+    margin-left: 0;
+  }
 }
 
 .icon {
@@ -185,6 +199,18 @@ body {
   border-radius: 5px;
   transition: outline-color 0.3s ease-in-out, opacity 0.4s ease-in-out;
 
+  @include r($md) {
+    // margin-left: 0;
+    margin-right: auto;
+    // margin: 0;
+  }
+
+  @include r($xs) {
+    width: 115px;
+    height: 23px;
+    margin-right: auto;
+  }
+
   &:focus {
     outline-color: rgba($c-orange-900, 0.7);
   }
@@ -208,7 +234,7 @@ body {
   background-color: $c-orange-900;
   color: $c-white;
   padding: 12px 32px;
-  font-size: 18px;
+  font-size: size(18, 14);
   letter-spacing: 0.03em;
   border-radius: 6px;
   outline: 2px solid transparent;
@@ -243,7 +269,7 @@ body {
 .title {
   @include fz(36, 24);
   color: $c-darkBlue-900;
-  margin-bottom: 60px;
+  margin-bottom: size(60, 30);
   font-weight: 500;
   text-align: center;
 }
@@ -304,7 +330,8 @@ body {
 }
 
 .mb-120 {
-  margin-bottom: 120px;
+  margin-bottom: size(120, 40);
+  
 }
 
 .hide {
@@ -327,5 +354,57 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 34px 30px;
 
+  @include r($md) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: auto 30px;
+  }
+
+  @include r($md) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  @include r($xs) {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    // max-width: 600px;
+    // overflow-x: hidden;
+
+  }
+
 
 }
+
+// .mobile-menu {
+//   display: flex;
+//   flex-direction: column;
+//   background-color: #fff;
+//   position: absolute;
+//   width: calc(100vw - 75px);
+//   height: 100vh;
+//   top: -60px;
+//   left: 0;
+//   padding: 0 15px;
+// }
+
+.fd-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.big--logo {
+  width: 209px;
+  height: 39px;
+}
+
+.none {
+  display: none;
+}
+
+.lock { overflow: hidden }
+
+
+

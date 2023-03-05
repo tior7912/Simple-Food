@@ -6,14 +6,27 @@ $rightPos: calc( (100vw - 1170px) / 2 );
   background-repeat: no-repeat;
   background-position: right $rightPos center;
 
+  @include r($sm) {
+      background-position: center;
+  }
+
+  // @include r($md) {
+  //   background-position: right auto center;
+  // }
+
   &__content {
     max-width: 470px;
     padding: 40px 0;
     background-color: rgba($c-white, 0.85);
+
+    @include r($sm) {
+      margin: 0 auto;
+      padding: 40px;
+    }
   }
 
   &__title {
-    margin-bottom: 45px;
+    margin-bottom: size(45, 15);
     text-align: left;
   }
 
@@ -22,9 +35,10 @@ $rightPos: calc( (100vw - 1170px) / 2 );
     p {
       margin: 0;
     }
-    font-size: 20px;
+    font-size: size(20, 14);
     line-height: 1.5;
-    margin-bottom: 30px;
+    margin-bottom: size(30, 15);
+
   }
 
   &__list {
@@ -45,7 +59,6 @@ $rightPos: calc( (100vw - 1170px) / 2 );
 
   &--google {
     width: 135px;
-    // background-image: url('../../images/play_store.png');
     background-image: url('../../images/play_store.png');
   }
 }

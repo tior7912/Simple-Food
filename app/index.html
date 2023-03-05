@@ -36,19 +36,86 @@
                         </li>
                     </ul>
                     <div class="header__actions">
-                        <button class="btn--sm icon icon--search" type="button">
+                        <button class="btn--sm header__btn--1 icon icon--search" type="button">
                             <span class="sr-only">
                                 Шукати товари
                             </span>
                         </button>
-                        <button class="btn--sm header__btn icon icon--cart" type="button">
+                        <button class="btn--sm header__btn--2 icon icon--cart" type="button">
                             <span class="sr-only">
                                 Переглянути кошик. Кількість товарів у кошику:
                             </span>
                             <span class="btn-counter">4</span>
                         </button>
                     </div>
+                    <button class="burger" type="button">
+                        <span class="burger__line"></span>
+                        <span class="sr-only">Открыть меню</span>
+                    </button>
                 </nav>
+                <div class="mobile-menu">
+                    <div class="mobile-menu__head">
+                        <!-- <a class="logo big--logo" href="#">
+                            <img class="logo__img" src="images/icon/SimpleFood.svg" width="208" height="39" alt="Лого SimpleFood">
+                        </a>
+                        <button class="close-btn">
+                            <img src="images/icon/close-icon.svg" alt="close">
+                        </button> -->
+                    </div>
+                    <ul class="mobile-menu__list">
+                        <li class="mobile-menu__item">
+                            <a class="menu__link menu__link--current" href="#">
+                                Головна
+                            </a>
+                        </li>
+                        <li class="mobile-menu__item">
+                            <a class="menu__link" href="#">
+                                Страви
+                            </a>
+                        </li>
+                        <li class="mobile-menu__item">
+                            <a class="menu__link" href="#">
+                                Контакти
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="footer__contacts">
+                        <h3 class="sr-only">Контактна інформація, соцмережі</h3>
+                        <adress class="contacts">
+                            <ul class="contacts__list">
+                                <li class="contacts__item">
+                                    <a class="contacts__link icon icon--adress" href="#">вул. Т.Г.Шевченка, 1</a>
+                                </li>
+                                <li class="contacts__item">
+                                    <a class="contacts__link icon icon--phone" href="tel:380501112233">380501112233</a>
+                                </li>
+                                <li class="contacts__item">
+                                    <a class="contacts__link icon icon--email" href="mailto:support@sfood.com">support@sfood.com</a>
+                                </li>
+                            </ul>
+                            <ul class="social">
+                                <li class="social__item">
+                                    <a class="social__link" href="#">
+                                        <span class="sr-only">Відвідати сторінку Simple Food в фейсбук</span>
+                                        <span class="social__icon" style="-webkit-mask-image: url('images/sprite.svg#icon-facebook'); mask-image: url('images/sprite.svg#icon-facebook');"></span>
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a class="social__link" href="#">
+                                        <span class="sr-only">Відвідати сторінку Simple Food у твіттер</span>
+                                        <span class="social__icon" style="-webkit-mask-image: url('images/sprite.svg#icon-twitter'); mask-image: url('images/sprite.svg#icon-twitter');"></span>
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a class="social__link" href="#">
+                                        <span class="sr-only">Відвідати сторінку Simple Food в інстаграм</span>
+                                        <span class="social__icon" style="-webkit-mask-image: url('images/sprite.svg#icon-instagram'); mask-image: url('images/sprite.svg#icon-instagram');"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </adress>
+                    </div>
+                </div>
             </div>
         </header>
 
@@ -58,17 +125,19 @@
             <section class="hero mb-120" style="background-image: url('images/scooter_guy.png');">
                 <h2 class="sr-only">Переваги сервісу доставки Simple Food</h2>
                 <div class="container">
-                    <div class="hero__title">
-                        Доставка <span class="text-orange">За 15 хвилин</span>
-                    </div>
-                    <div class="hero__description">
-                        <p>
-                            Найшвидший сервіс доставки їжі у вашому місті. Якщо запізнемось - то доставка за наш рахунок
-                        </p>
-                    </div>
-                    <div class="hero__actions">
-                        <a class="btn" href="#">Замовити</a>
-                        <a class="td-link" href="#">Детальніше</a>
+                    <div class="hero__content">
+                        <div class="hero__title">
+                            Доставка <span class="text-orange">За 15 хвилин</span>
+                        </div>
+                        <div class="hero__description">
+                            <p>
+                                Найшвидший сервіс доставки їжі у вашому місті. Якщо запізнемось - то доставка за наш рахунок
+                            </p>
+                        </div>
+                        <div class="hero__actions">
+                            <a class="btn" href="#">Замовити</a>
+                            <a class="td-link" href="#">Детальніше</a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -76,7 +145,7 @@
             <section class="popular mb-120">
                 <div class="container">
                     <h2 class="title">Популярне в категоріях</h2>
-                    <ul class="categories-nav popular__nav">
+                    <ul class="categories-nav popular__nav ">
                         <li class="categories-nav__item">
                             <button class="categories-nav__btn icon icon--burger" type="button" data-filter="category-1">Бургери</button>
                         </li>

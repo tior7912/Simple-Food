@@ -4,7 +4,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
+  gap: size(40, 20);
   padding: 0 size(90, 0);
   
   .reviews__content {
@@ -26,12 +26,12 @@
   }
 
   &__text {
-    font-size: 20px;
+    font-size: size(20, 14);
     font-style: italic;
     line-height: 1.5;
     position: relative;
 
-    margin-bottom: 30px;
+    margin-bottom: size(30, 20);
 
     &::before,
     &::after {
@@ -63,7 +63,7 @@
   // }
 
   &__name {
-    font-size: 20px;
+    font-size: size(20, 16);
     font-weight: 500;
     color: $c-orange-900;
     margin-bottom: 15px;
