@@ -1,0 +1,89 @@
+.filter-price {
+  padding: 25px 15px;
+
+  &__inputs {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+
+  &__labels {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__input,
+  &__input::placeholder {
+    font-size: 16px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+  }
+
+  &__text {
+    color: $c-gray;
+  }
+
+  &__input {
+    // display: flex;
+    width: 62px;
+    height: 40px;
+    padding: 22px 12px;
+    background-color: $c-peach;
+    outline: 1px solid $c-silver-200;
+    border-radius: 3px;
+
+    &::placeholder {
+      color: $c-dark;
+    }
+  }
+
+  &__slider {
+    width: calc(100% - 17px);
+  }
+
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.noUi-connect {
+  background-color: $c-orange-900;
+}
+
+.noUi-target {
+  background-color: $c-gray;
+  border: none;
+  border-radius: 0px;
+  box-shadow: none;
+  height: 2px;
+
+}
+
+.noUi-handle::after,
+.noUi-handle::before {
+  display: none;
+}
+
+.noUi-handle {
+  background-color: $c-orange-900;
+  border: none;
+  border-radius: 100%;
+  box-shadow: none;
+  outline: 0;
+}
+
+.noUi-horizontal .noUi-handle {
+  width: 18px;
+  height: 18px;
+  top: -8px;
+}
+

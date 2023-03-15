@@ -6,23 +6,18 @@ $rightPos: calc( (100vw - 1170px) / 2 );
   background-repeat: no-repeat;
   background-position: right $rightPos center;
 
-  @include r($sm) {
-      background-position: center;
+  @include r($size-lg) {
+    background-position: right 15px center;
   }
 
-  // @include r($md) {
-  //   background-position: right auto center;
-  // }
+  @include r($size-xs) {
+    background-size: 0;
+  }
 
   &__content {
     max-width: 470px;
-    padding: 40px 0;
+    padding: size(40, 0) 0;
     background-color: rgba($c-white, 0.85);
-
-    @include r($sm) {
-      margin: 0 auto;
-      padding: 40px;
-    }
   }
 
   &__title {
@@ -32,9 +27,10 @@ $rightPos: calc( (100vw - 1170px) / 2 );
 
   &__info {
 
-    p {
-      margin: 0;
-    }
+    // p {
+    //   margin: 0;
+    // }
+
     font-size: size(20, 14);
     line-height: 1.5;
     margin-bottom: size(30, 15);

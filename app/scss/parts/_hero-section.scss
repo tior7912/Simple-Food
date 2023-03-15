@@ -1,8 +1,8 @@
 
 $rightPos: calc( (100vw - 1170px) / 2 );
-$rightPosMD: calc( (100vw - 992px) / 2 );
-$rightPosSM: calc( (100vw - 768px) / 2 );
-$rightPosXS: calc( (100vw - 560px) / 2 );
+// $rightPosMD: calc( (100vw - 992px) / 2 );
+// $rightPosSM: calc( (100vw - 768px) / 2 );
+// $rightPosXS: calc( (100vw - 560px) / 2 );
 
 .hero {
   min-height: 660px;
@@ -12,46 +12,36 @@ $rightPosXS: calc( (100vw - 560px) / 2 );
   background-size: contain;
   background-position: right $rightPos center;
 
-  @include r($md) {
-    background-position: right $rightPosMD center;
+  @include r($size-lg) {
+    min-height: size(660, 300, 1200);
+    background-position: right 15px center;
+    background-size: size(560, 254) auto;
+
   }
 
-  @include r($sm) {
-    background-position: right $rightPosSM center;
-  }
-
-  @include r($xs) {
-    background-position: right $rightPosXS center;
+  @include r($size-sm) {
+    background-color: rgba($c-white, 0.85);
+    background-blend-mode: overlay;
   }
 
   &__content {
-
-    @include r($sm) {
-      padding: 20px 0;
-      width: 100vw;
-      // height: 700px;
-      background-color: rgba($c-white, 0.85);
-    }
-
-    @include r($xs) {
-      height: 500px;
-    }
+    max-width: 480px;
+    padding: 25px 0;
   }
 
   &__title {
-    max-width: 480px;
     @include fz(66, 40);
     color: $c-darkBlue-900;
     margin-bottom: 20px;
     text-transform: uppercase;
     font-weight: 500;
 
+    @include r($size-xs) {
+      margin-bottom: 3px;
+    }
+
     span {
       display: block;
-
-      @include r($md) {
-        // color: red;
-      }
     }
 
     
@@ -62,7 +52,11 @@ $rightPosXS: calc( (100vw - 560px) / 2 );
     line-height: 1.5;
     margin-bottom: 20px;
     font-size: size(20, 16);
-    @include line-clamp(4)
+    @include line-clamp(4);
+
+    @include r($size-xs) {
+      margin-bottom: 5px;
+    }
   }
 
   &__actions {

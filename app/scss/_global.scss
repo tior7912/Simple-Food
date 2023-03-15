@@ -10,32 +10,19 @@ body {
 }
 
 .wrapper {
+  padding-top: size(162, 72);
   overflow-x: hidden;
-
-  // @include r($xs) {
-  //   overflow-x: hidden;
-  // }
 }
 
-.page {
-  padding-top: 160px;
-
-  @include r($xs) {
-    padding-top: 19px;;
-}
-}
+// .page {
+//   padding-top: 160px;
+// }
 
 .container {
   max-width: 1200px;
   padding: 0 15px;
   width: 100%;
   margin: 0 auto;
-
-  @include r($xs) {
-    max-width: 600px;
-    // margin: 0 auto;
-    margin-left: 0;
-  }
 }
 
 .icon {
@@ -152,13 +139,45 @@ body {
     }
   }
 
+  &--close {
+    &::before {
+      mask-image: url('../images/sprite.svg#close-icon');
+    }
+  }
+
+  &--burger-menu {
+    &::before {
+      mask-image: url('../images/sprite.svg#icon-burger-menu');
+    }
+  }
+
+  &--breadcrumbs {
+    &::before {
+      width: 5px;
+      height: 10px;
+      mask-image: url('../images/sprite.svg#chevron');
+      background-color: $c-gray;
+    }
+
+    &:hover {
+      &::before {
+        // mask-image: url('../images/sprite.svg#chevron');
+        background-color: $c-gray;
+      }
+    }
+  }
+
+  &--filter {
+    &::before {
+      mask-image: url('../images/sprite.svg#filter');
+    }
+  }
+
   &:hover {
     &::before {
       background-color: $c-white;
     }
   }
-
-  
 
   &:active {
     &::before {
@@ -199,18 +218,6 @@ body {
   border-radius: 5px;
   transition: outline-color 0.3s ease-in-out, opacity 0.4s ease-in-out;
 
-  @include r($md) {
-    // margin-left: 0;
-    margin-right: auto;
-    // margin: 0;
-  }
-
-  @include r($xs) {
-    width: 115px;
-    height: 23px;
-    margin-right: auto;
-  }
-
   &:focus {
     outline-color: rgba($c-orange-900, 0.7);
   }
@@ -233,7 +240,7 @@ body {
   display: inline-block;
   background-color: $c-orange-900;
   color: $c-white;
-  padding: 12px 32px;
+  padding: size(12, 8) size(32, 24);
   font-size: size(18, 14);
   letter-spacing: 0.03em;
   border-radius: 6px;
@@ -266,6 +273,66 @@ body {
 
 }
 
+.filter {
+  // display: none;
+  min-width: 47px;
+  height: 47px;
+
+  &::before {
+    background-color: $c-orange-900;
+    min-width: 32px;
+    height: 32px;
+  }
+
+  &:hover {
+    &::before {
+      background-color: $c-orange-900;
+    }
+  }
+}
+
+.close-btn {
+  min-width: 40px;
+  height: 40px;
+
+  &::before {
+    min-width: 18px;
+    height: 18px;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    &::before {
+      background-color: $c-darkBlue-900;
+    }
+  }
+}
+
+.lock {
+  overflow: hidden;
+
+  .header {
+    &::before {
+      @include r($size-md) {
+        opacity: 1;
+        visibility: hidden;
+        z-index: 10;
+      }
+    }
+  }
+
+  .filter {
+    &::before {
+      @include r($size-md) {
+        opacity: 1;
+        visibility: hidden;
+        z-index: 10;
+      }
+    }
+  }
+}
+
 .title {
   @include fz(36, 24);
   color: $c-darkBlue-900;
@@ -289,7 +356,7 @@ body {
 }
 
 .td-link {
-  font-size: 20px;
+  font-size: size(20, 16);
   line-height: 1.5;
   color: $c-darkBlue-900;
   outline: 2px solid transparent;
@@ -331,7 +398,10 @@ body {
 
 .mb-120 {
   margin-bottom: size(120, 40);
-  
+}
+
+.mb-60 {
+  margin-bottom: size(60, 30);
 }
 
 .hide {
@@ -353,46 +423,22 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 34px 30px;
-
-  @include r($md) {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: auto 30px;
-  }
-
-  @include r($md) {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-
-  @include r($xs) {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 10px;
-    // max-width: 600px;
-    // overflow-x: hidden;
-
-  }
-
-
 }
 
-// .mobile-menu {
-//   display: flex;
-//   flex-direction: column;
-//   background-color: #fff;
-//   position: absolute;
-//   width: calc(100vw - 75px);
-//   height: 100vh;
-//   top: -60px;
-//   left: 0;
-//   padding: 0 15px;
-// }
+.cols-catalog {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
 
-.fd-column {
-  display: flex;
-  flex-direction: column;
+  @include r($size-md) {
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+  }
+
+  @include r($size-sm) {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+  }
 }
 
 .big--logo {
@@ -400,11 +446,18 @@ body {
   height: 39px;
 }
 
-.none {
-  display: none;
+.checbox {
+  appearance: checkbox;
+  background-color: $c-peach;
 }
 
-.lock { overflow: hidden }
+.filter {
+  display: none;
+
+  @include r($size-md) {
+    display: flex;
+  }
+}
 
 
 

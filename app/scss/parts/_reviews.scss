@@ -3,6 +3,10 @@
   
   &__list {
     margin-bottom: 30px;
+
+    @include r($size-xs) {
+      margin-bottom: 0;
+    }
   }
 
   &__actions {
@@ -27,6 +31,11 @@
     cursor: pointer;
     transition: background-color 0.3s ease-in-out, outline-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 
+    @include r($size-xs) {
+      position: absolute;
+      top: 30px;
+    }
+
     &::before {
       content: '';
       min-width: 19px;
@@ -43,6 +52,20 @@
     &--prev {
       &::before {
         mask-image: url('../../images/sprite.svg#icon-left');
+      }
+
+      @include r($size-xs) {
+        left: calc(50% - 140px);
+      }
+    }
+
+    &--next {
+      &::before {
+        mask-image: url('../../images/sprite.svg#icon-right');
+      }
+
+      @include r($size-xs) {
+        right: calc(50% - 140px);
       }
     }
 
@@ -100,7 +123,6 @@
     cursor: pointer;
     outline: 2px solid transparent;
     transition: background-color 0.3s ease-in-out, outline-color 0.3s ease-in-out;
-    // display: inline-block;
 
     &--active {
       background-color: $c-orange-900;
@@ -118,6 +140,15 @@
     &:active {
       outline-color: transparent;
       outline-color: rgba($c-orange-900, 0.5);
+    }
+  }
+
+  &__slider {
+
+    .reviews__dots {
+      @include r($size-xs) {
+        display: none;
+      }
     }
   }
 

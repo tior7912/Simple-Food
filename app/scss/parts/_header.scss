@@ -6,22 +6,41 @@
   right: 0;
   z-index: 99;
   background-color: $c-white;
-  padding: 60px 0;
+  padding: size(60, 14) 0;
   border-bottom: 3px solid transparent;
   transition: padding 0.3s ease-in-out, border-color 0.3s ease-in-out;
-
-  @include r($md) {
-    padding: 40px 0;
-  }
-
-  @include r($xs) {
-    padding: 25px 0;
-  }
   
-
   &.sticky {
     border-color: $c-orange-900;
     padding: 15px 0;
+  }
+
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($c-dark, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    z-index: -100;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  @at-root .lock {
+    overflow: hidden;
+  
+    .header {
+      &::before {
+        @include r($size-md) {
+          opacity: 1;
+          visibility: visible;
+          z-index: 10;
+        }
+      }
+    }
   }
 
   &__nav {
@@ -31,10 +50,26 @@
     // position: relative;
   }
 
+  &__menu {
+    @include r($size-md) {
+      display: none;
+    }
+  }
+
+  &__logo {
+    @include r($size-xs) {
+      width: 115px;
+    }
+  }
+
   &__actions {
     display: flex;
     align-items: center;
     gap: 10px;
+
+    @include r($size-md) {
+      margin-left: auto;
+    }
   }
 
   &__btn {
@@ -54,135 +89,34 @@
   }
 }
 
-.menu {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  margin-left: auto;
 
-  @include r($md) {
-    display: none;
-  }
 
-  @include r($xs) {
-    gap: 20px;
-  }
+// .mobile-menu {
+//   transform: translateY(200%);
+//   display: flex;
+//   flex-direction: column;
+//   background-color: #fff;
+//   position: absolute;
+//   top: 0px;
+//   left: 0;
+//   padding: 0 15px;
 
-  &__link {
-    font-size: 18px;
-    letter-spacing: 0.01em;
-    border-radius: 5px;
-    outline: 2px solid transparent;
-    transition: outline-color 0.3s ease-in-out, opacity 0.4s ease-in-out, color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+//   &__head {
+//     padding: 25px 0;
+//     margin-bottom: 25px;
+//     display: flex;
+//     justify-content: space-between;
+//   }
 
-    &:focus {
-      outline-color: rgba($c-orange-900, 0.7);
-    }
+//   &__list {
+//     margin-bottom: 40px;
+//   }
 
-    &:hover {
-      color: $c-orange-900;
-    }
+//   &__item {
+//     &:not(:last-child) {
+//       margin-bottom: 20px;
+//     }
+//   }
+// }
 
-    &:active {
-      text-shadow: 2px 2px 5px rgba($c-dark, 0.5);
-      outline-color: transparent;
-    }
 
-    &--current {
-      color: $c-orange-900;
-    }
-
-    @include r($xs) {
-      display: flex;
-      justify-content: start;
-    }
-  }
-}
-
-.mobile-menu {
-  transform: translateY(200%);
-  display: flex;
-  flex-direction: column;
-  background-color: #fff;
-  position: absolute;
-  top: 0px;
-  left: 0;
-  padding: 0 15px;
-
-  &__head {
-    padding: 25px 0;
-    margin-bottom: 25px;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &__list {
-    margin-bottom: 40px;
-  }
-
-  &__item {
-    &:not(:last-child) {
-      margin-bottom: 20px;
-    }
-  }
-}
-
-.burger {
-  display: none;
-  width: 40px; 
-  height: 30px; 
-  position: relative;
-  color: $c-darkBlue-900;
-  cursor: pointer;
-
-  @include r($md) {
-    display: flex;
-  }
-}
-
-.burger__line {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
-  height: 2px;
-  background-color: currentColor;
-  transition: transform 0.3s ease-in-out;
-}
-
-.burger::before,
-.burger::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: currentColor;
-  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
-}
-
-.burger::before {
-  top: 0;
-}
-
-.burger::after {
-  top: calc(100% - 2px);
-}
-
-.burger--active .burger__line {
-    transform: scale(0);
-    transition: transform 0.3s ease-in-out;
-  }
-
-.burger--active::before {
-    transform: rotate(45deg);
-    top: 50%;
-    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
-  }
-
-.burger--active::after {
-    transform: rotate(-45deg);
-    top: 50%;
-    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
-  }

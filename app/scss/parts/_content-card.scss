@@ -17,7 +17,11 @@
   
   &__head {
     overflow: hidden;
-    @include adaptive-image(370px, 300px)
+    @include adaptive-image(370px, 300px);
+
+    @include r($size-xs) {
+        padding-bottom: 300px;
+    }
   }
   
   &__img {

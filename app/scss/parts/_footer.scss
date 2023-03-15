@@ -4,21 +4,26 @@
   &__content {
     display: flex;
     flex-wrap: wrap;
-    gap: 70px;
+    gap: size(70, 30);
 
-    @include r($md) {
-      gap: 50px;
+    @include r($size-md) {
+      justify-content: center;
     }
 
-    @include r($xs) {
-      display: flex;
-      flex-direction: column;
+    @include r($size-sm) {
+      justify-content: flex-start;
     }
-
   }
 
   &__logo {
     margin-bottom: 30px;
+  }
+
+  &__nav {
+
+    @include r($size-md) {
+      order: 3;
+    }
   }
 
   &__menu {
@@ -28,88 +33,65 @@
     gap: 20px 90px;
     margin-bottom: size(30, 60);
 
-    @include r($lg) {
-      gap: 20px;
+    @include r($size-xs) {
+      grid-template-columns: 300px;
+      grid-auto-flow: unset;
     }
-
-    @include r($xs) {
-      order: 3;
-    }
-  
 
     .menu__item {
       // grid-column: 3;
 
       &:nth-child(-n+4) {
         grid-column: 1;
+
+        @include r($size-xs) {
+          grid-column: unset;
+        }
       }
 
       &:ntn-chid(n+5):ntn-child(-n+8) {
         grid-column: 2;
+
+        @include r($size-xs) {
+          grid-column: unset;
+        }
       }
 
       &:ntn-chid(n+9):ntn-child(-n+12) {
         grid-column: 3;
+
+        @include r($size-xs) {
+          grid-column: unset;
+        }
       }
-
-      @include r($xs) {
-
-        grid-column: 1;
-      }
-
-    }
-  }
-
-  &__nav {
-    @include r($md) {
-      margin-right: 15px;
-      margin-left: auto;
-    }
-
-    @include r($xs) {
-      margin-left: 0;
-      margin-right: auto;
-      order: 3;
     }
   }
 
   &__contacts {
     margin-left: auto;
-    margin-right: 80px;
+    margin-right: size(80, 0);
 
-    @include r($lg) {
-      margin-left: auto;
-      margin-right: 0;
-    }
-
-    @include r($xs) {
+    @include r($size-md) {
       margin-left: 0;
-      margin-right: auto;
-      order: 1;
     }
 
-    .social {
-      @include r($xs) {
-        margin: 0;
-      }
+    @include r($size-xs) {
+      order: 2;
     }
 
-    .contacts__list {
 
-      @include r($md) {
-        flex-direction: column;
-        // margin-bottom: 0;
-        gap: 0;
-      }
+    // .social {
+
+    // }
+
+    // .contacts__list {
+
       
-    }
+    // }
 
-    .contacts__link {
+    // .contacts__link {
 
-      @include r($md) {
-        // margin-bottom: 0;
-      }
-    }
+    // }
 
   }
 
@@ -118,7 +100,7 @@
     line-height: 1;
     color: $c-white;
     background-color: $c-darkBlue-900;
-    padding: 30px;
+    padding: size(30, 20);
     text-align: center;
   }
 }
@@ -214,24 +196,15 @@
     }
   }
 
-  &__list {
+  // &__list {
 
-    @include r($md) {
-      display: flex;
-      gap: 20px;
-    }
-  }
+  // }
 
 }
 
 .social {
   display: flex;
   gap: 20px;
-
-  @include r($md) {
-    width: fit-content;
-    margin: 0 auto;
-  }
 
   &__link {
     min-width: 39px;

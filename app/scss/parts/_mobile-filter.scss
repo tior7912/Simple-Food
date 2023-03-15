@@ -1,0 +1,37 @@
+
+.mobile-filter {
+  // max-width: 320px;
+  // display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 900;
+  width: 320px;
+  background-color: $c-white;
+  opacity: 0;
+  transform: translateY(-200%);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+  @include r($size-md) {
+    display: block;
+  }
+
+  &.open {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &__head {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+  }
+
+}
+
+// .filter {
+  
+// }
+
+

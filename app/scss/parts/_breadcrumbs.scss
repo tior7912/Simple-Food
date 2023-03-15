@@ -1,0 +1,32 @@
+
+.breadcrumbs {
+  background-color: rgba($c-orange-900, 0.1);
+  padding: 24px 0;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__item {
+  }
+
+  &__link {
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    color: #505050;
+    gap: 5px;
+  }
+
+}
+
+.icon--breadcrumbs {
+  &:hover {
+    &::before {
+      background-color: $c-gray;
+    }
+  }
+}
+

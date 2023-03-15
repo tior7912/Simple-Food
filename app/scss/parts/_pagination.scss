@@ -1,0 +1,22 @@
+
+.pagination {
+  display: flex;
+  justify-content: center;
+
+  &__list {
+    &:not(:last-child) {
+      margin-right: 6px;
+    }
+  }
+
+  &__item {
+    padding: 15px 20px;
+    background-color: $c-peach;
+    border-radius: 3px;
+    
+  }
+
+  &__active {
+    border: 1px solid $c-dark;
+  }
+}

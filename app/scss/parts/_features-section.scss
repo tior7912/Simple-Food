@@ -1,11 +1,10 @@
 
-$leftPos: calc( (100vw - 1032px) / 2 );
-
+// $leftPos: calc( (100vw - 1032px) / 2 );
 
 .features {
 
   &__inner {
-    min-height: 585px;
+    min-height: size(585, 462);
     padding: 0 size(70, 0);
 
     margin: 0 auto;
@@ -21,13 +20,9 @@ $leftPos: calc( (100vw - 1032px) / 2 );
 
   &__content {
     max-width: 470px;
+    padding: 25px 0 31px;
     background-color: rgba($c-white, 0.85);
     align-self: flex-end;
-
-    @include r($md) {
-      padding: 20px;
-      height: 600px;
-    }
   }
 
   &__title {
@@ -36,30 +31,29 @@ $leftPos: calc( (100vw - 1032px) / 2 );
   }
 
   &__description {
-    font-size: 20px;
+    font-size: size(20, 18);
     line-height: 1.5;
-    // margin-bottom: 30px;
-
+    margin-bottom: size(30, 20);
     
-    p {
-      margin: 0 0 30px 0;
-    }
+    // p {
+    //   margin: 0 0 30px 0;
+    // }
   }
 
   &__list {
-    margin-bottom: 30px;
+    margin-bottom: size(30, 20);
   }
 
   &__item {
-    font-size: 24px;
+    font-size: size(24, 18);
     line-height: 1.5;
     color: $c-darkBlue-900;
 
     justify-content: flex-start;
-    gap: 30px;
+    gap: size(30, 10);
 
     &:not(:last-child) {
-      margin-bottom: 20px;
+      margin-bottom: size(20, 15);
     }
 
     &::before {
@@ -76,14 +70,12 @@ $leftPos: calc( (100vw - 1032px) / 2 );
     &.icon--courier {
       &::before {
         background-color: #00aaff;
-
       }
     }
 
     &.icon--build {
       &::before {
         background-color: #ff2222;
-
       }
     }
   }

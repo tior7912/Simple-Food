@@ -5,9 +5,10 @@
 @import "fonts";
 @import "reset";
 @import "global";
-@import "libs";
 
+@import "parts/menu";
 @import "parts/header";
+@import "parts/mobile-nav";
 @import "parts/hero-section";
 @import "parts/popular-section";
 @import "parts/categories";
@@ -18,6 +19,14 @@
 @import "parts/reviews";
 @import "parts/rewiews-card";
 @import "parts/application";
+@import "parts/price-input";
+@import "parts/breadcrumbs";
+@import "parts/catalog-section";
+@import "parts/aside";
+@import "parts/pagination";
+@import "parts/sales";
+@import "parts/mobile-filter";
+
 @import "parts/footer";
 
 

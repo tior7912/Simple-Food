@@ -23,6 +23,10 @@
     flex-basis: 100px;
     margin: 0 auto;
     object-fit: contain;
+
+    @include r($size-xs) {
+        margin-bottom: 5px;
+    }
   }
 
   &__text {
@@ -50,12 +54,22 @@
     &::before {
       top: 0;
       left: -40px;
+
+      @include r($size-xs) {
+        top: -10px;
+        left: -35px;
+      }
     }
 
     &::after {
       bottom: 0;
       right: -40px;
       mask-image: url('../../images/sprite.svg#icon-quote-close');
+
+      @include r($size-xs) {
+        bottom: 10px;
+        right: -35px;
+      }
     }
   }
 
@@ -66,7 +80,7 @@
     font-size: size(20, 16);
     font-weight: 500;
     color: $c-orange-900;
-    margin-bottom: 15px;
+    margin-bottom: size(15, 10);
   }
 
   &__detail {
